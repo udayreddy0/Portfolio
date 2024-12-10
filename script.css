@@ -1,5 +1,5 @@
 .project-card img {
-    width: 110%; /* Enlarges the width slightly */
+    width: 120%; /* Enlarges the width slightly */
     height: auto; /* Maintains aspect ratio */
     object-fit: cover;
     margin-left: -5%; /* Centers the enlarged image */
