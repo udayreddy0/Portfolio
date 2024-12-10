@@ -25,7 +25,7 @@
         }
 
         nav {
-            background-color: #2c3e50;
+            background-color: #1e2a47;
             color: white;
             padding: 20px;
             position: sticky;
@@ -44,6 +44,7 @@
         .logo {
             font-size: 24px;
             font-weight: bold;
+            color: #f39c12;
         }
 
         .links a {
@@ -51,6 +52,7 @@
             text-decoration: none;
             margin-left: 20px;
             font-size: 18px;
+            transition: color 0.3s ease;
         }
 
         .links a:hover {
@@ -89,26 +91,45 @@
             font-size: 30px;
             margin: 0 15px;
             color: #333;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
 
         .social-links a:hover {
             color: #f39c12;
         }
 
-        .btn {
-            background-color: #f39c12;
-            color: white;
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+        /* Skills Section */
+        #skills {
+            background-color: #fff;
         }
 
-        .btn:hover {
-            background-color: #e67e22;
+        .skills {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .skill {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill h3 {
+            margin-bottom: 10px;
+            color: #333;
         }
 
         /* Projects Section */
@@ -130,7 +151,7 @@
             width: 30%;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
         }
 
         .project-card:hover {
@@ -141,6 +162,7 @@
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 15px;
+            color: #2c3e50;
         }
 
         .project-description {
@@ -155,38 +177,6 @@
             font-weight: bold;
         }
 
-        /* Skills Section */
-        #skills {
-            background-color: #f9f9f9;
-        }
-
-        .skills {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-
-        .skill {
-            background-color: #f0f0f0;
-            padding: 20px;
-            border-radius: 10px;
-            width: 200px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
-        }
-
-        .skill:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .skill h3 {
-            margin-bottom: 10px;
-            color: #333;
-        }
-
         /* Contact Section */
         #contact {
             background-color: #ecf0f1;
@@ -195,7 +185,7 @@
         .contact-form input,
         .contact-form textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -213,7 +203,7 @@
 
         /* Footer */
         footer {
-            background-color: #2c3e50;
+            background-color: #1e2a47;
             color: white;
             padding: 10px 0;
             text-align: center;
@@ -262,14 +252,13 @@
         <div class="container">
             <h1>Hey I'm Uday Reddy</h1>
             <p>I'm a Cloud & DevOps Engineer |</p>
-            <p>I'm a passionate Cloud and DevOps Engineer with expertise in AWS, Terraform, Jenkins, Docker, and Kubernetes. I thrive on optimizing and streamlining processes while ensuring the highest levels of reliability and scalability in cloud environments.</p>
+            <p>I'm a passionate Cloud and DevOps Engineer with expertise in AWS, Terraform, Jenkins, Docker, Kubernetes, and more. I thrive on optimizing and streamlining processes while ensuring the highest levels of reliability and scalability in cloud environments.</p>
             <div class="social-links">
                 <a href="#"><i class="fa-brands fa-github"></i></a>
                 <a href="#"><i class="fa-brands fa-facebook"></i></a>
                 <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="#"><i class="fa-brands fa-twitter"></i></a>
             </div>
-            <button class="btn">Hire me</button>
         </div>
     </section>
 
@@ -277,7 +266,7 @@
     <section id="about">
         <div class="container">
             <h1>About Me</h1>
-            <p>I'm Uday Reddy, a Cloud and DevOps Engineer. I have experience working with AWS, Docker, Jenkins, Terraform, and Kubernetes. My passion lies in optimizing cloud infrastructure and implementing automation strategies for seamless operations. I'm committed to providing efficient and scalable cloud solutions.</p>
+            <p>I'm Uday Reddy, a Cloud and DevOps Engineer with experience in cloud infrastructure, automation, and containerization technologies. I specialize in implementing scalable solutions using AWS, Jenkins, Terraform, and Kubernetes to optimize processes and ensure efficient delivery of services.</p>
         </div>
     </section>
 
@@ -288,7 +277,7 @@
             <div class="skills">
                 <div class="skill">
                     <h3>AWS</h3>
-                    <p>Cloud Solutions Architect, EC2, RDS, S3</p>
+                    <p>Cloud Solutions Architect</p>
                 </div>
                 <div class="skill">
                     <h3>Docker</h3>
@@ -302,6 +291,42 @@
                     <h3>Kubernetes</h3>
                     <p>Container Orchestration</p>
                 </div>
+                <div class="skill">
+                    <h3>Jenkins</h3>
+                    <p>CI/CD Automation</p>
+                </div>
+                <div class="skill">
+                    <h3>Maven</h3>
+                    <p>Build Automation</p>
+                </div>
+                <div class="skill">
+                    <h3>SonarQube</h3>
+                    <p>Code Quality Analysis</p>
+                </div>
+                <div class="skill">
+                    <h3>Git & GitHub</h3>
+                    <p>Version Control</p>
+                </div>
+                <div class="skill">
+                    <h3>GitLab</h3>
+                    <p>CI/CD & Code Collaboration</p>
+                </div>
+                <div class="skill">
+                    <h3>Trivy</h3>
+                    <p>Security Scanning</p>
+                </div>
+                <div class="skill">
+                    <h3>Grafana</h3>
+                    <p>Monitoring & Visualization</p>
+                </div>
+                <div class="skill">
+                    <h3>Prometheus</h3>
+                    <p>Monitoring & Metrics</p>
+                </div>
+                <div class="skill">
+                    <h3>Splunk</h3>
+                    <p>Log Monitoring & Analysis</p>
+                </div>
             </div>
         </div>
     </section>
@@ -309,7 +334,7 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h1>My Projects</h1>
+            <h1>Projects</h1>
             <div class="projects-container">
                 <div class="project-card" data-aos="fade-up">
                     <div class="project-title">AWS Three-Tier Application Deployment</div>
