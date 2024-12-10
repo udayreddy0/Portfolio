@@ -1,11 +1,6 @@
 .project-card img {
-    width: 120%; /* Enlarges the width slightly */
-    height: auto; /* Maintains aspect ratio */
-    object-fit: cover;
-    margin-left: -5%; /* Centers the enlarged image */
-    transition: transform 0.3s; /* Adds a hover effect */
-}
-
-.project-card:hover img {
-    transform: scale(1.05); /* Slight zoom-in effect on hover */
+    width: 100%; /* Ensures image width spans the card width */
+    max-width: none; /* Removes any restrictions on maximum width */
+    height: auto; /* Keeps the aspect ratio */
+    object-fit: cover; /* Ensures the image is properly cropped if necessary */
 }
