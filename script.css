@@ -1,7 +1,9 @@
 .project-card img {
     width: 100%; /* Makes the image fit the width of the container */
-    height: 200px; /* Sets a fixed height for all images */
-    object-fit: cover; /* Ensures the image fills the space without distortion */
+    height: auto; /* Maintains the aspect ratio of the image */
+    max-height: 200px; /* Restricts the image height to 200px */
+    object-fit: contain; /* Ensures the entire image is visible without distortion */
     border-radius: 10px; /* Adds rounded corners to images */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for better visuals */
 }
+
