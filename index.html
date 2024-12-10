@@ -4,21 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uday Reddy Portfolio</title>
+    <title>Uday Reddy - Cloud & DevOps Engineer Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* General Reset */
+        body, h1, h2, h3, p, ul, li, figure {
             margin: 0;
             padding: 0;
         }
 
-        /* Basic Styles */
+        /* Body Style */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
         nav {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -28,7 +37,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .logo {
@@ -50,17 +60,104 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
 
         section {
-            padding: 100px 0;
+            padding: 80px 0;
             text-align: center;
         }
 
-        h1 {
+        h1, h2 {
             font-size: 36px;
             margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        /* Home Section */
+        #home {
+            background-color: #ecf0f1;
+        }
+
+        .social-links a {
+            font-size: 30px;
+            margin: 0 15px;
+            color: #333;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #f39c12;
+        }
+
+        .btn {
+            background-color: #f39c12;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e67e22;
+        }
+
+        /* Projects Section */
+        #projects {
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .projects-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            width: 30%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            color: #f39c12;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Skills Section */
+        #skills {
+            background-color: #f9f9f9;
         }
 
         .skills {
@@ -74,18 +171,25 @@
             background-color: #f0f0f0;
             padding: 20px;
             border-radius: 10px;
-            width: 250px;
+            width: 200px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
         }
 
-        .social-links i {
-            font-size: 30px;
-            margin: 0 10px;
+        .skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill h3 {
+            margin-bottom: 10px;
             color: #333;
         }
 
-        .social-links i:hover {
-            color: #f39c12;
+        /* Contact Section */
+        #contact {
+            background-color: #ecf0f1;
         }
 
         .contact-form input,
@@ -97,31 +201,48 @@
             border-radius: 5px;
         }
 
-        .btn {
+        .contact-form button {
             background-color: #f39c12;
-            padding: 10px 20px;
-            border: none;
             color: white;
+            padding: 12px 20px;
+            border: none;
             font-size: 18px;
             cursor: pointer;
             border-radius: 5px;
         }
 
-        .btn:hover {
-            background-color: #e67e22;
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
         }
 
-        /* Responsive */
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Styles */
         @media screen and (max-width: 768px) {
+            .projects-container {
+                flex-direction: column;
+            }
+
             .skills {
                 flex-direction: column;
                 gap: 20px;
+            }
+
+            .project-card {
+                width: 100%;
             }
         }
     </style>
 </head>
 
 <body>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
@@ -130,7 +251,7 @@
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
-                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
@@ -141,7 +262,7 @@
         <div class="container">
             <h1>Hey I'm Uday Reddy</h1>
             <p>I'm a Cloud & DevOps Engineer |</p>
-            <p>I'm a passionate Cloud and DevOps Engineer with expertise in AWS, Terraform, Jenkins, Docker, and Kubernetes. I have a solid foundation in cloud technologies, automation, and infrastructure as code. I thrive on optimizing and streamlining processes while ensuring the highest levels of reliability and scalability in cloud environments.</p>
+            <p>I'm a passionate Cloud and DevOps Engineer with expertise in AWS, Terraform, Jenkins, Docker, and Kubernetes. I thrive on optimizing and streamlining processes while ensuring the highest levels of reliability and scalability in cloud environments.</p>
             <div class="social-links">
                 <a href="#"><i class="fa-brands fa-github"></i></a>
                 <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -185,17 +306,27 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services">
+    <!-- Projects Section -->
+    <section id="projects">
         <div class="container">
-            <h1>Services</h1>
-            <p>I offer a variety of services to help businesses optimize and manage their cloud infrastructure. From setting up DevOps pipelines to managing cloud environments, I ensure scalability, security, and automation across the board.</p>
-            <ul>
-                <li>Cloud Infrastructure Management</li>
-                <li>CI/CD Pipeline Setup</li>
-                <li>Automation with Terraform</li>
-                <li>Containerization & Orchestration</li>
-            </ul>
+            <h1>My Projects</h1>
+            <div class="projects-container">
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-title">AWS Three-Tier Application Deployment</div>
+                    <p class="project-description">Implemented a scalable 3-tier architecture on AWS using EC2, RDS, and Elastic Load Balancing. Automated deployment with CloudFormation/Terraform, ensuring high availability and scalability.</p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-title">Cloud Migration Project</div>
+                    <p class="project-description">Led cloud migration from on-premise to AWS, ensuring data security, migration accuracy, and optimizing server performance post-migration.</p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-title">CI/CD Pipeline Automation</div>
+                    <p class="project-description">Created and implemented Jenkins-based CI/CD pipelines integrated with AWS services to automate testing, deployment, and monitoring of cloud applications.</p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -203,21 +334,23 @@
     <section id="contact">
         <div class="container">
             <h1>Contact Me</h1>
-            <div class="contact-form">
+            <form class="contact-form">
                 <input type="text" placeholder="Your Name" required>
                 <input type="email" placeholder="Your Email" required>
-                <textarea rows="4" placeholder="Your Message" required></textarea>
-                <button class="btn">Send Message</button>
-            </div>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
         </div>
     </section>
 
-    <!-- AOS Scripts -->
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Uday Reddy. All Rights Reserved.</p>
+    </footer>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init({
-            offset: 0
-        });
+        AOS.init();
     </script>
 </body>
 
