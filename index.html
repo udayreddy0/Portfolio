@@ -44,10 +44,6 @@
             color: #f39c12;
         }
 
-        .logo span {
-            color: #e74c3c;
-        }
-
         .links a {
             text-decoration: none;
             color: #fff;
@@ -147,23 +143,21 @@
             object-fit: cover;
         }
 
+        .project-card h3 {
+            margin: 10px 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .project-card p {
+            padding: 0 15px 15px;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
         .project-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        #resume {
-            padding: 40px;
-            background-color: #ecf0f1;
-        }
-
-        .resume-pdf iframe {
-            width: 100%;
-            max-width: 800px;
-            height: 600px;
-            border: none;
-            border-radius: 5px;
-            margin-top: 20px;
         }
 
         #contact {
@@ -206,13 +200,14 @@
 <body>
     <nav>
         <div class="nav-container">
-            <div class="logo">Uday <span>Reddy</span></div>
+            <div class="logo">Uday Reddy</div>
             <div class="links">
                 <a href="#home">Home</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
-                <a href="#resume">Resume</a>
+                <a href="#Resume">Resume</a>
+                
             </div>
         </div>
     </nav>
@@ -236,92 +231,101 @@
                 <div class="skill-card"><h3>Terraform</h3></div>
                 <div class="skill-card"><h3>Docker</h3></div>
                 <div class="skill-card"><h3>Kubernetes</h3></div>
-                <div class="skill-card"><h3>Linux</h3></div>
+                <div class="skill-card"><h3>Jenkins</h3></div>
+                <div class="skill-card"><h3>Ansible</h3></div>
+                <div class="skill-card"><h3>Argo CD</h3></div>
+                <div class="skill-card"><h3>Grafana</h3></div>
+                <div class="skill-card"><h3>Prometheus</h3></div>
+                <div class="skill-card"><h3>SonarQube</h3></div>
+                <div class="skill-card"><h3>Bash</h3></div>
                 <div class="skill-card"><h3>Git</h3></div>
+                <div class="skill-card"><h3>GitHub</h3></div>
+                <div class="skill-card"><h3>GitLab</h3></div>
+                <div class="skill-card"><h3>Linux</h3></div>
+                <div class="skill-card"><h3>Ubuntu</h3></div>
+                <div class="skill-card"><h3>Splunk</h3></div>
+                <div class="skill-card"><h3>Trivy</h3></div>
+                <div class="skill-card"><h3>Apache Tomcat</h3></div>
+                <div class="skill-card"><h3>Apache2/httpd</h3></div>
+                <div class="skill-card"><h3>Nginx</h3></div>
             </div>
         </div>
     </section>
 
-    <section id="projects">
-        <div class="container">
-            <h1>Projects</h1>
-            <div class="projects-container">
-                <!-- Add your project cards here -->
-                <div class="project-card">
-                    <img src="project1.jpg" alt="Project 1">
-                    <h3>Project 1</h3>
-                    <p>Description of Project 1.</p>
-                </div>
-                <!-- Repeat project cards -->
+<!-- Projects Section -->
+<section id="projects">
+    <div class="container">
+        <h1>Projects</h1>
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="netflix-clone.png" alt="Netflix Clone">
+                <h3>Netflix Clone</h3>
+                <p>Implemented a streaming app using DevSecOps best practices with Jenkins pipelines.</p>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="youtube-clone.png" alt="YouTube Clone">
+                <h3>YouTube Clone</h3>
+                <p>Developed a CI/CD pipeline to deliver scalable infrastructure for a YouTube-like app.</p>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="hotstar-clone.png" alt="Hotstar Clone">
+                <h3>Hotstar Clone</h3>
+                <p>Containerized microservices deployed using Kubernetes clusters.</p>
+            </div>
+            <!-- Project 4 -->
+            <div class="project-card">
+                <img src="three-tier.png" alt="Three Tier App">
+                <h3>Three-Tier Architecture</h3>
+                <p>Designed a secure 3-tier AWS infrastructure with Auto Scaling and Load Balancers.</p>
+            </div>
+            <!-- Project 5 -->
+            <div class="project-card">
+                <img src="cloud-migration.png" alt="Cloud Migration">
+                <h3>Cloud Migration</h3>
+                <p>Migrated on-prem applications to AWS ensuring minimal downtime and high security.</p>
+            </div>
+            <!-- Project 6 -->
+            <div class="project-card">
+                <img src="terraform-project.png" alt="Terraform Project">
+                <h3>Terraform with OpenTofu</h3>
+                <p>Automated multi-environment deployments using Terraform and OpenTofu frameworks.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="resume">
-        <div class="container">
-            <h1>Resume</h1>
-            <div class="resume-pdf">
-                <iframe src="resume.pdf" title="Uday Reddy Resume"></iframe>
-            </div>
-        </div>
-    </section>
 
-    <section id="contact">
-        <div class="container">
-            <h1>Contact Me</h1>
-            <form class="contact-form" onsubmit="submitToGoogle(event)">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-            <br>
-            <a href="https://raw.githubusercontent.com/username/repository/branch/resume.pdf" target="_blank" class="resume-link">
-                <button style="background: #f39c12; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
-                    View Resume on GitHub
-                </button>
-            </a>
+   <section id="resume">
+    <div class="container">
+        <h1>Resume</h1>
+        <div class="resume-image">
+            <img src="resume.pdf" alt="Resume of Uday Reddy">
         </div>
-    </section>
+    </div>
+</section>   
+
+
+<section id="contact">
+    <div class="container">
+        <h1>Contact Me</h1>
+        <iframe src="https://script.google.com/macros/s/AKfycbwSCJwMd_e01Kd2Lvpd3TUkzTzltAjnYDbnSpW889DheApgbXeBeiIDlq46sUJlBCLPKQ/exec" 
+                width="100%" 
+                height="600" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0">
+            Loading…
+        </iframe>
+    </div>
+</section>
+
 
     <footer>
-        <p>© 2024 Uday Reddy. All Rights Reserved.</p>
+        <p>&copy; 2024 Uday Reddy. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        const googleScriptURL = 'YOUR_WEB_APP_URL'; // Replace with your Web App URL
-
-        async function submitToGoogle(event) {
-            event.preventDefault(); // Prevent form submission
-            const form = event.target;
-
-            const data = {
-                name: form.name.value,
-                email: form.email.value,
-                message: form.message.value
-            };
-
-            try {
-                const response = await fetch(googleScriptURL, {
-                    method: 'POST',
-                    body: JSON.stringify(data),
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                });
-
-                const result = await response.json();
-                if (result.status === 'success') {
-                    alert('Message sent successfully!');
-                    form.reset();
-                } else {
-                    throw new Error('Failed to send message');
-                }
-            } catch (error) {
-                alert('Error: ' + error.message);
-            }
-        }
-    </script>
 </body>
 
 </html>
