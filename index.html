@@ -5,6 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+    section {
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 800px;
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    form label, form input, form textarea, form button {
+      display: block;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+    form button {
+      background-color: #333;
+      color: #fff;
+      padding: 0.5rem;
+      border: none;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #555;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -22,24 +77,27 @@
 
   <section id="home">
     <h2>Welcome to My Portfolio</h2>
-    <p>Your introduction goes here.</p>
+    <p>Hi, I am a passionate developer and problem-solver. Explore my skills, projects, and more!</p>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
-    <ul>
-      <li>Skill 1</li>
-      <li>Skill 2</li>
-      <li>Skill 3</li>
+    <ul id="skills-list">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Node.js</li>
+      <li>Python</li>
     </ul>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <ul>
-      <li>Project 1</li>
-      <li>Project 2</li>
-      <li>Project 3</li>
+    <ul id="projects-list">
+      <li>Project 1: Dynamic Portfolio Website</li>
+      <li>Project 2: E-commerce Application</li>
+      <li>Project 3: Real-time Chat App</li>
     </ul>
   </section>
 
@@ -53,23 +111,23 @@
     <form id="contact-form">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" placeholder="Your Name" required>
-      
+
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" placeholder="Your Email" required>
-      
+
       <label for="message">Message:</label>
       <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-      
+
       <button type="submit">Send</button>
     </form>
   </section>
 
   <footer>
-    <p>&copy; 2024 Your Name</p>
+    <p>&copy; 2024 Your Name. All rights reserved.</p>
   </footer>
 
   <script>
-    // Smooth Scrolling for Navigation Links
+    // Smooth Scrolling
     document.querySelectorAll('nav a').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -79,23 +137,54 @@
       });
     });
 
-    // Contact Form Submission with Validation
-    document.getElementById('contact-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-
-      if (!name || !email || !message) {
-        alert('Please fill out all fields.');
-        return;
+    // Skills Hover Effect
+    const skillsList = document.getElementById('skills-list');
+    skillsList.addEventListener('mouseover', (e) => {
+      if (e.target.tagName === 'LI') {
+        e.target.style.color = 'blue';
       }
+    });
+    skillsList.addEventListener('mouseout', (e) => {
+      if (e.target.tagName === 'LI') {
+        e.target.style.color = 'black';
+      }
+    });
 
-      // Simulating form submission
-      alert('Thank you, ' + name + '! Your message has been sent.');
-      
-      // Optionally clear the form
-      this.reset();
+    // Projects Click Effect
+    const projectsList = document.getElementById('projects-list');
+    projectsList.addEventListener('click', (e) => {
+      if (e.target.tagName === 'LI') {
+        alert(`You clicked on: ${e.target.textContent}`);
+      }
+    });
+
+    // Contact Form Submission
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      if (name && email && message) {
+        alert(`Thank you, ${name}! Your message has been sent.`);
+        contactForm.reset();
+      } else {
+        alert('Please fill out all fields.');
+      }
+    });
+
+    // Dynamic Year in Footer
+    const footer = document.querySelector('footer p');
+    const currentYear = new Date().getFullYear();
+    footer.textContent = `© ${currentYear} Your Name. All rights reserved.`;
+
+    // Dynamic Skill Addition (Bonus)
+    const newSkills = ['AWS', 'Docker', 'Kubernetes'];
+    newSkills.forEach(skill => {
+      const skillItem = document.createElement('li');
+      skillItem.textContent = skill;
+      skillsList.appendChild(skillItem);
     });
   </script>
 </body>
