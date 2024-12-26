@@ -1,357 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uday Reddy - Cloud & DevOps Engineer Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Portfolio</title>
     <style>
-        /* General Reset */
-        body, h1, h2, p, ul, li {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
-
         nav {
-            background: #1e2a47;
-            color: #fff;
-            padding: 20px;
             position: sticky;
             top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
         }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #f39c12;
-        }
-
-        .links a {
+        nav a {
+            color: white;
             text-decoration: none;
-            color: #fff;
             margin: 0 10px;
-            font-size: 18px;
         }
-
-        .links a:hover {
-            color: #f39c12;
+        nav a:hover {
+            text-decoration: underline;
         }
-
         section {
-            padding: 60px 20px;
-            text-align: center;
+            padding: 20px;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h1, h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        .social-links a {
-            font-size: 28px;
-            margin: 0 10px;
-            color: #333;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #f39c12;
-        }
-
-        #skills {
-            background-color: #fff;
-        }
-
-        .skills {
+        .skills, .projects {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
             gap: 20px;
         }
-
-        .skill-card {
-            background: #f0f0f0;
-            border-radius: 8px;
-            padding: 15px;
-            width: 200px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .skill-card h3 {
-            margin: 0;
-            color: #333;
-        }
-
-        #projects {
-            background: #f9f9f9;
-        }
-
-        .projects-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .project-card {
+        .skill-card, .project-card {
             border: 1px solid #ccc;
-            border-radius: 10px;
-            overflow: hidden;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 10px;
+            border-radius: 5px;
+            width: calc(33.333% - 20px);
+            box-sizing: border-box;
         }
-
-        .project-card img {
+        .contact-form {
+            max-width: 400px;
+            margin: auto;
+        }
+        .contact-form input, .contact-form textarea {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .project-card h3 {
             margin: 10px 0;
-            font-size: 1.2rem;
-            color: #333;
-        }
-
-        .project-card p {
-            padding: 0 15px 15px;
-            font-size: 0.95rem;
-            color: #555;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        #contact {
-            background: #ecf0f1;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
+            padding: 10px;
+            border: 1px solid #ccc;
             border-radius: 5px;
         }
-
         .contact-form button {
-            background: #f39c12;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
             border: none;
-            color: #fff;
-            padding: 15px 20px;
             border-radius: 5px;
-            font-size: 18px;
             cursor: pointer;
-            transition: background 0.3s;
         }
-
         .contact-form button:hover {
-            background: #e67e22;
-        }
-
-        footer {
-            background: #1e2a47;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
+            background-color: #0056b3;
         }
     </style>
 </head>
-
 <body>
     <nav>
-        <div class="nav-container">
-            <div class="logo">Uday Reddy</div>
-            <div class="links">
-                <a href="#home">Home</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-                <a href="#Resume">Resume</a>
-                
-            </div>
+        <div>My Portfolio</div>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <a href="#resume">Resume</a>
         </div>
     </nav>
 
     <section id="home">
-        <div class="container">
-            <h1>Hey, I'm <span style="color:#e74c3c;">Uday Reddy</span></h1>
-            <p>A passionate Cloud & DevOps Engineer with expertise in AWS, Terraform, Docker, Kubernetes, and more.</p>
-            <div class="social-links">
-                <a href="https://github.com/udayreddy0" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/uday-reddy-17a342268/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-        </div>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Hello! I'm a Cloud and DevOps Engineer.</p>
+        <p>Connect with me: <a href="https://github.com" target="_blank">GitHub</a> | <a href="https://linkedin.com" target="_blank">LinkedIn</a></p>
     </section>
 
     <section id="skills">
-        <div class="container">
-            <h1>Skills</h1>
-            <div class="skills">
-                <div class="skill-card"><h3>AWS</h3></div>
-                <div class="skill-card"><h3>Terraform</h3></div>
-                <div class="skill-card"><h3>Docker</h3></div>
-                <div class="skill-card"><h3>Kubernetes</h3></div>
-                <div class="skill-card"><h3>Jenkins</h3></div>
-                <div class="skill-card"><h3>Ansible</h3></div>
-                <div class="skill-card"><h3>Argo CD</h3></div>
-                <div class="skill-card"><h3>Grafana</h3></div>
-                <div class="skill-card"><h3>Prometheus</h3></div>
-                <div class="skill-card"><h3>SonarQube</h3></div>
-                <div class="skill-card"><h3>Bash</h3></div>
-                <div class="skill-card"><h3>Git</h3></div>
-                <div class="skill-card"><h3>GitHub</h3></div>
-                <div class="skill-card"><h3>GitLab</h3></div>
-                <div class="skill-card"><h3>Linux</h3></div>
-                <div class="skill-card"><h3>Ubuntu</h3></div>
-                <div class="skill-card"><h3>Splunk</h3></div>
-                <div class="skill-card"><h3>Trivy</h3></div>
-                <div class="skill-card"><h3>Apache Tomcat</h3></div>
-                <div class="skill-card"><h3>Apache2/httpd</h3></div>
-                <div class="skill-card"><h3>Nginx</h3></div>
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="skill-card">AWS</div>
+            <div class="skill-card">Terraform</div>
+            <div class="skill-card">Docker</div>
+            <div class="skill-card">Kubernetes</div>
+            <div class="skill-card">Jenkins</div>
+            <div class="skill-card">Linux</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+                <h3>Project 1</h3>
+                <p>Three-tier architecture with high scalability.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project 2</h3>
+                <p>Cloud migration using DevOps tools.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project 3</h3>
+                <p>CI/CD pipelines using Jenkins and GitHub.</p>
             </div>
         </div>
     </section>
 
-<!-- Projects Section -->
-<section id="projects">
-    <div class="container">
-        <h1>Projects</h1>
-        <div class="projects-container">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <img src="netflix-clone.png" alt="Netflix Clone">
-                <h3>Netflix Clone</h3>
-                <p>Implemented a streaming app using DevSecOps best practices with Jenkins pipelines.</p>
-            </div>
-            <!-- Project 2 -->
-            <div class="project-card">
-                <img src="youtube-clone.png" alt="YouTube Clone">
-                <h3>YouTube Clone</h3>
-                <p>Developed a CI/CD pipeline to deliver scalable infrastructure for a YouTube-like app.</p>
-            </div>
-            <!-- Project 3 -->
-            <div class="project-card">
-                <img src="hotstar-clone.png" alt="Hotstar Clone">
-                <h3>Hotstar Clone</h3>
-                <p>Containerized microservices deployed using Kubernetes clusters.</p>
-            </div>
-            <!-- Project 4 -->
-            <div class="project-card">
-                <img src="three-tier.png" alt="Three Tier App">
-                <h3>Three-Tier Architecture</h3>
-                <p>Designed a secure 3-tier AWS infrastructure with Auto Scaling and Load Balancers.</p>
-            </div>
-            <!-- Project 5 -->
-            <div class="project-card">
-                <img src="cloud-migration.png" alt="Cloud Migration">
-                <h3>Cloud Migration</h3>
-                <p>Migrated on-prem applications to AWS ensuring minimal downtime and high security.</p>
-            </div>
-            <!-- Project 6 -->
-            <div class="project-card">
-                <img src="terraform-project.png" alt="Terraform Project">
-                <h3>Terraform with OpenTofu</h3>
-                <p>Automated multi-environment deployments using Terraform and OpenTofu frameworks.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-   <section id="resume">
-        <div class="container">
-            <h1>Resume</h1>
-            <div class="resume-image">
-                <a href="resume.pdf" target="_blank">Download My Resume</a>
-            </div>
-        </div>
-    </section>   
-
-
-<section id="contact">
-        <div class="container">
-            <h1>Contact Me</h1>
-            <p>Email: <a href="mailto:udayreddy237092@gmail.com">udayreddy237092@gmail.com</a></p>
-            <p>Phone: +91 8985284030</p>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
+    <section id="resume">
+        <h2>Resume</h2>
+        <a href="resume.pdf" download>Download My Resume</a>
     </section>
 
-     <script>
-        const form = document.getElementById('contactForm');
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form" id="contact-form" action="https://your-google-apps-script-url" method="post">
+            <input type="text" name="name" id="name" placeholder="Your Name" required>
+            <input type="email" name="email" id="email" placeholder="Your Email" required>
+            <textarea name="message" id="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
 
-            const response = await fetch('https://script.google.com/macros/s/AKfycbx7k6um7yKGFWXmWLYEpi7xIsoT2bPrFgw5zaAHheOP6iI185XkzWWIjQX4QYT4Mr8n0w/exec', {
-                method: 'POST',
-                body: JSON.stringify({ name, email, message }),
-                headers: { 'Content-Type': 'application/json' },
-            });
-
-            const result = await response.json();
-            if (result.status === 'success') {
-                alert('Message sent successfully!');
-                form.reset();
-            } else {
-                alert('Something went wrong. Please try again.');
-            }
-        });
-    </script>
 </body>
-</html>
-
-
-    <footer>
-        <p>&copy; 2024 Uday Reddy. All Rights Reserved.</p>
-    </footer>
-</body>
-
 </html>
