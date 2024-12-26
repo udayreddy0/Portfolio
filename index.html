@@ -1,133 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        nav {
-            position: sticky;
-            top: 0;
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            padding: 20px;
-        }
-        .skills, .projects {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .skill-card, .project-card {
-            border: 1px solid #ccc;
-            padding: 10px;
-            border-radius: 5px;
-            width: calc(33.333% - 20px);
-            box-sizing: border-box;
-        }
-        .contact-form {
-            max-width: 400px;
-            margin: auto;
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .contact-form button {
-            background-color: #007BFF;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .contact-form button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header>
+    <h1>Your Name</h1>
     <nav>
-        <div>My Portfolio</div>
-        <div>
-            <a href="#home">Home</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-            <a href="#resume">Resume</a>
-        </div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <section id="home">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hello! I'm a Cloud and DevOps Engineer.</p>
-        <p>Connect with me: <a href="https://github.com" target="_blank">GitHub</a> | <a href="https://linkedin.com" target="_blank">LinkedIn</a></p>
-    </section>
+  <section id="home">
+    <h2>Welcome to My Portfolio</h2>
+    <p>Your introduction goes here.</p>
+  </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills">
-            <div class="skill-card">AWS</div>
-            <div class="skill-card">Terraform</div>
-            <div class="skill-card">Docker</div>
-            <div class="skill-card">Kubernetes</div>
-            <div class="skill-card">Jenkins</div>
-            <div class="skill-card">Linux</div>
-        </div>
-    </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Skill 1</li>
+      <li>Skill 2</li>
+      <li>Skill 3</li>
+    </ul>
+  </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects">
-            <div class="project-card">
-                <h3>Project 1</h3>
-                <p>Three-tier architecture with high scalability.</p>
-            </div>
-            <div class="project-card">
-                <h3>Project 2</h3>
-                <p>Cloud migration using DevOps tools.</p>
-            </div>
-            <div class="project-card">
-                <h3>Project 3</h3>
-                <p>CI/CD pipelines using Jenkins and GitHub.</p>
-            </div>
-        </div>
-    </section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li>Project 1</li>
+      <li>Project 2</li>
+      <li>Project 3</li>
+    </ul>
+  </section>
 
-    <section id="resume">
-        <h2>Resume</h2>
-        <a href="resume.pdf" download>Download My Resume</a>
-    </section>
+  <section id="resume">
+    <h2>Resume</h2>
+    <p>Download my <a href="resume.pdf" target="_blank">Resume</a>.</p>
+  </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form class="contact-form" id="contact-form" action="https://your-google-apps-script-url" method="post">
-            <input type="text" name="name" id="name" placeholder="Your Name" required>
-            <input type="email" name="email" id="email" placeholder="Your Email" required>
-            <textarea name="message" id="message" placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <form id="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+      
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+      
+      <button type="submit">Send</button>
+    </form>
+  </section>
 
+  <footer>
+    <p>&copy; 2024 Your Name</p>
+  </footer>
+
+  <script>
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Contact Form Submission with Validation
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        alert('Please fill out all fields.');
+        return;
+      }
+
+      // Simulating form submission
+      alert('Thank you, ' + name + '! Your message has been sent.');
+      
+      // Optionally clear the form
+      this.reset();
+    });
+  </script>
 </body>
 </html>
